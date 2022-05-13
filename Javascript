@@ -1,0 +1,60 @@
+echo "# Calculator" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/BirbIndustries/Calculator.git
+git push -u origin main
+
+let bigloop = 1;
+
+while (bigloop = 1){
+let calcLoop = 1;
+let firstNumber = prompt('First Number:');
+let funct = prompt('do you want to +,-,× or ÷ ?');
+let secondNumber = prompt('Second Number?');
+if (funct == '+'){
+answer = Number(firstNumber) + Number(secondNumber);
+};
+if (funct == '-'){
+answer = Number(firstNumber) - Number(secondNumber);
+};
+if (funct == 'x'){
+answer = Number(firstNumber) * Number(secondNumber);
+};
+if (funct == '÷'){
+answer = Number(firstNumber) / Number(secondNumber);
+};
+
+while (calcLoop == 1){
+let contin = prompt('your answer was ' + answer + ' . Continue this with equation or make a new one?, no means reset. (yes or no)');
+ if (contin == 'yes'){
+    funct = prompt('what do you want to do to the answer? (+, -, x or ÷)');
+    let nextNumber = prompt('what number do you want to (insert function here) by?');
+ if (funct == '+'){
+    answer = Number(answer) + Number(nextNumber);
+    alert(answer);
+  };
+ if (funct == '-'){
+    answer = Number(answer) - Number(nextNumber);
+    alert(answer);
+  };  
+ if (funct == 'x'){
+    answer = Number(answer) * Number(nextNumber);
+    alert(answer);
+  };
+ if (funct == '÷'){
+    answer = Number(answer) / Number(nextNumber);
+    alert(answer);
+  };
+ };
+ if (contin == 'no'){
+  calcLoop = 0;
+  let end = prompt('Do you want to end the program or make a new calculation? (yes if end, no if new calculation)');
+  if (end == 'yes'){
+      throw new Error('You ended the program and the code works!');
+  }
+  end = 0;
+  };
+};
+};
